@@ -43,7 +43,7 @@
     </servlet>
     <servlet>
         <servlet-name>global</servlet-name>
-        <servlet-class>com.sale.commons.servlet.Global</servlet-class>
+        <servlet-class>com.qywenji.sale.commons.servlet.Global</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>

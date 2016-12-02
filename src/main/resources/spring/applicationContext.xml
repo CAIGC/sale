@@ -11,13 +11,13 @@
 	<context:annotation-config/>
 	
     <!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
-    <context:component-scan base-package="com.sale.*">
+    <context:component-scan base-package="com.qywenji.sale.*">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
-    <bean class = "com.sale.commons.utils.SpringContextUtil" id = "springContextUtil" />
+    <bean class = "com.qywenji.sale.commons.utils.SpringContextUtil" id = "springContextUtil" />
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -26,6 +26,7 @@
                 <value>classpath:log.properties</value>
                 <!--<value>classpath:amq.properties</value>-->
                 <value>classpath:redis.properties</value>
+                <value>classpath:url.properties</value>
             </list>
         </property>
         <property name="fileEncoding" value="UTF-8"/>

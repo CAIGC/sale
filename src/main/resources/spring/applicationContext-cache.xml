@@ -27,7 +27,7 @@
     
       <bean class="org.springframework.beans.factory.config.MethodInvokingBean">
         <property name="staticMethod">
-            <value>com.sale.commons.utils.RedisUtil.setJedisPool</value>
+            <value>com.qywenji.sale.commons.utils.RedisUtil.setJedisPool</value>
         </property>
         <property name="arguments">
             <list>

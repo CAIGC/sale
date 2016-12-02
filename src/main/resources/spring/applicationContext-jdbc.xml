@@ -55,7 +55,7 @@
         <property name="namingStrategy">
            <bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
        </property>
-        <property name="packagesToScan" value="com.sale.*" />
+        <property name="packagesToScan" value="com.qywenji.sale.*" />
     </bean>
 
     <bean id="transactionManager"
