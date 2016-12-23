@@ -1,0 +1,451 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>胖吴货栈</title>
+    <link rel="stylesheet" href="../../css/swiper.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="../../css/reset.css"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}" href="../../css/common/common.css"/>
+    <link rel="stylesheet" th:href="@{/css/commodity.css}" href="../../css/commodity.css"/>
+    <script th:src="@{/js/jquery.js}" src="../../js/common/jquery/jquery.min.js" type="text/javascript"></script>
+    <script th:src="@{/js/jquery.lazyload.min.js}" src="../../js/common/jquery/jquery.lazyload.min.js"
+            type="text/javascript"></script>
+    <script src="../../js/iscroll5.js"></script>
+
+</head>
+<body class="wrapper">
+<!--犒劳自己弹出框star!-->
+<div id="win" class="win_none">
+    <div class="layout_win">
+        <a class="close" onClick="document.getElementById('win').className='win_none'" href="javascript:void(0)"></a>
+        <div class="commodity">
+                <span class="img">
+                    <img src="../../images/img.jpg"/>
+                </span>
+            <div>
+                <h3>派森百NFC鲜榨橙汁1000ML*8</h3> <strong>￥336.00</strong>
+            </div>
+        </div>
+        <!--<form method="get" id="forMyselfForm" th:action="@{/forMyself}">
+        -->
+        <ul class="spec">
+            <li>
+                <h3>规格：</h3>
+                <p id="forMyselfRadio">
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481" checked="checked"/>
+                        <span>1000ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>500ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>330ml*9</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>248ml*9</span>
+                    </label>
+                </p>
+            </li>
+        </ul>
+        <ul class="num">
+            <li>购买数量</li>
+            <li>
+                    <span>
+                        <a id="minus" onclick="minusAmount()" href="javascript:void(0)">-</a>
+                        <input type="tel" name="buyAmount" id="buyAmount" onkeyup="this.value=this.value.replace(/\D|^0/g,'');if(this.value.length >
+                        3) this.value = this.value.substr(0,3);" th:value="1" value="1"/>
+                        <a id="add" onclick="addAmount()" href="javascript:void(0)">+</a>
+                    </span>
+            </li>
+        </ul>
+        <!--</form>
+        -->
+        <div class="btn" onclick="buyForMyself()">
+            <a th:href="|javascript:void(0);|" href="order_details.html">下一步</a>
+        </div>
+    </div>
+    <div id="transparent_bg" class="transparent_bg"></div>
+</div>
+<!--犒劳自己弹出框end!-->
+<!-- 加入购物车star! -->
+<div id="win1" class="win_none">
+    <div class="layout_win">
+        <a class="close" onClick="document.getElementById('win').className='win_none'" href="javascript:void(0)"></a>
+        <div class="commodity">
+                <span class="img">
+                    <img src="../../images/img.jpg"/>
+                </span>
+            <div>
+                <h3>派森百NFC鲜榨橙汁1000ML*8</h3> <strong>￥336.00</strong>
+            </div>
+        </div>
+        <!--<form method="get" id="forMyselfForm" th:action="@{/forMyself}">
+        -->
+        <ul class="spec">
+            <li>
+                <h3>规格：</h3>
+                <p id="forMyselfRadio">
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481" checked="checked"/>
+                        <span>1000ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>500ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>330ml*9</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="productItemId" th:value="1481"/>
+                        <span>248ml*9</span>
+                    </label>
+                </p>
+            </li>
+        </ul>
+        <ul class="num">
+            <li>购买数量</li>
+            <li>
+                    <span>
+                        <a id="minusMeasure" onclick="minusMeasure()" href="javascript:void(0)">-</a>
+                        <input type="tel" name="buyMeasure" id="buyMeasure" onkeyup="this.value=this.value.replace(/\D|^0/g,'');if(this.value.length >
+                        3) this.value = this.value.substr(0,3);" th:value="1"/>
+                        <a id="addMeasure" onclick="addMeasure()" href="javascript:void(0)">+</a>
+                    </span>
+            </li>
+        </ul>
+        <!--</form>
+        -->
+        <div class="btn add-to-cart">
+            <span>加入购物车</span>
+        </div>
+    </div>
+    <div id="transparent_bg" class="transparent_bg"></div>
+</div>
+<!-- 加入购物车star! -->
+<!--赠送他人弹出框star!-->
+<div id="win2" class="win_none">
+    <div class="layout_win">
+        <a class="close" onClick="document.getElementById('win2').className='win_none'" href="javascript:void(0)"></a>
+        <div class="commodity">
+                <span class="img">
+                    <img src="../../images/img.jpg"/>
+                </span>
+            <div>
+                <h3>派森百NFC鲜榨橙汁1000ML*8</h3>
+                <strong>￥336.00</strong>
+            </div>
+        </div>
+        <!--<form method="post" id="sendToOtherForm" th:action="@{/sendToOther}">
+        -->
+        <ul class="spec">
+            <li>
+                <h3>规格：</h3>
+                <p id="sendToOtherRadio">
+                    <label>
+                        <input type="radio" name="sendToOtherProductItemId" th:value="1481" checked="checked"/>
+                        <span>1000ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="sendToOtherProductItemId" th:value="1481"/>
+                        <span>500ml*8</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="sendToOtherProductItemId" th:value="1481"/>
+                        <span>330ml*9</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="sendToOtherProductItemId" th:value="1481"/>
+                        <span>248ml*9</span>
+                    </label>
+                </p>
+            </li>
+        </ul>
+        <!--</form>
+        -->
+        <div class="btn" onclick="sendToOther()">
+            <a th:href="|javascript:void(0);|" href="select_object.html">下一步</a>
+        </div>
+    </div>
+    <div class="transparent_bg"></div>
+</div>
+<!--赠送他人弹出框end!-->
+<div class="layout items" id="wraper">
+    <div id="scroller">
+        <!-- 图片滚动star !-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../../images/img.jpg"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../images/img.jpg"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../images/img.jpg"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../images/img.jpg"/>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- 点击购物的作假图片 -->
+        <div class="item">
+            <img src=""/>
+        </div>
+        <!-- 图片滚动end !-->
+        <h1 class="title">派森百NFC鲜榨橙汁1000ML*8</h1>
+        <div class="title_cmt">盛夏精选 限秒100箱，秒完恢复价格！</div>
+        <div class="price">
+            <span>￥336.00</span>
+            <span>￥336.00</span>
+        </div>
+        <ul class="spec_info">
+            <li>
+                <span>规格</span>
+                <p>
+                    <span>1000ML*8</span>
+                    <span>500ML*8</span>
+                    <span>330ml*9</span>
+                    <span>248ml*9</span>
+                </p>
+            </li>
+        </ul>
+        <ul class="exp_info">
+            <li>
+                <span>产地</span>
+                广东
+            </li>
+            <li class="describe">
+                <p>全国包邮（偏远地区除外）。当日14点之前的订单，当天受理，次日发货；当日14点之后的订单，次日受理，隔天发货。</p>
+            </li>
+            <!--
+        <li>
+            <div>
+                <span>配送</span>
+                顺丰
+            </div>
+            <p>全国免费包邮（新疆、西藏、港澳台除）</p>
+        </li>
+        !-->
+        </ul>
+        <div class="details">
+            <a href="list.html">
+                <span>更多商品</span> <i></i>
+            </a>
+        </div>
+        <div class="list list_recommend">
+            <ul>
+                <li>
+                    <a href="product_template.html">
+                        <span class="img">
+                            <img src="../../images/img.jpg"/>
+                        </span>
+                        <h2>派森百NFC鲜榨橙汁</h2>
+                        <p>￥398.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="product_template.html">
+                        <span class="img">
+                            <img src="../../images/silver_01.jpg"/>
+                        </span>
+                        <h2>开口孔雀 30克</h2>
+                        <p>￥266.00</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="product_template.html">
+                        <span class="img">
+                            <img src="../../images/silver_02.jpeg"/>
+                        </span>
+                        <h2>福气绵绵 35克</h2>
+                        <p>￥328.00</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="scroller-pullUp">
+            <span id="up-icon" class="icon-double-angle-up">↑</span>
+            <span id="pullUp-msg" class="pull-up-msg">下拉加载商品详情</span>
+        </div>
+    </div>
+</div>
+<!-- 加入购物车 -->
+<div class="add_shopping">
+    <span></span>
+</div>
+<!-- 页面尾部 -->
+<footer class="wrapper">
+    <ul id="f_btn" class="footer_btn">
+        <li class="car">
+            <a href="shopping_cart/shoppingcart.html" class="shopping-cart">
+                <span>2</span>
+            </a>
+        </li>
+        <li class="treat_yourself">
+            <a onClick="document.getElementById('win').className='win'" th:href="|javascript:void(0);|"
+               href="javascript:void(0)">犒劳自己</a>
+        </li>
+        <li>
+            <a th:href="|javascript:void(0);|" onClick="document.getElementById('win2').className='win'"
+               href="javascript:void(0)">赠送他人</a>
+        </li>
+    </ul>
+</footer>
+</body>
+<!--<div th:include="common/common_head::common_body"></div>
+-->
+<script type="text/javascript" src='../../js/common/jquery/jquery-ui.min.js'></script>
+<script th:src="@{/js/swiper.min.js}" src="../../js/swiper.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: 0,
+        loop: true,
+        autoplayDisableOnInteraction: false
+    });
+</script>
+<script type="text/javascript">
+    $(".add_shopping").click(function () {
+        $("#win1").addClass("win").removeClass("win_none");
+    })
+    $(".wrapper .treat_yourself a").click(function () {
+        $("#win").addClass("win").removeClass("win_none");
+    })
+    $("#win1 .close").click(function () {
+        $("#win1").addClass("win_none").removeClass('win');
+    })
+
+    $("#win .btn").click(function () {
+        if ($("#win .num input").val() == "") {
+            alert("抱歉，订单数量不能少于1");
+        }
+        ;
+    })
+    $('.add-to-cart').on('click', function () {
+        var imgSrc = $(".items").find(".swiper-slide-active").children("img").attr("src");
+        var shopping_num = $("#win1 .num input").val();
+
+        if (!shopping_num == "") {
+            $("#win1").addClass("win_none").removeClass('win');
+            $(".items .item").children("img").attr("src", imgSrc);
+
+            var cart = $('.shopping-cart');
+            var imgtodrag = $(this).parents("#win1").siblings('.items').find(".item").children('img');
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone().offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                }).css({
+                    'opacity': '0.5',
+                    'position': 'absolute',
+                    'height': 'auto',
+                    'width': '100%',
+                    'z-index': '100'
+                }).appendTo($('body')).animate({
+                    'top': cart.offset().top + 20,
+                    'left': cart.offset().left + 35,
+                    'width': 0,
+                    'height': "auto"
+                }, 800, 'easeInOutExpo', function () {
+                    $(".footer_btn .car a").addClass('shopping_up');
+                    $(".shopping_up span").text(shopping_num);
+                });
+            }
+        } else {
+            alert("抱歉，订单数量不能少于1")
+        }
+
+    });
+</script>
+
+<script type="text/javascript" th:inline="javascript">
+    //
+    $(function ($) {
+        var appHeight = $(window).height() - $(".footer_btn").outerHeight(true),
+                minHeight;
+        minHeight = appHeight;
+        $(".layout").css({
+            "min-height": minHeight
+        })
+        $("#copyright").css({
+            "padding-bottom": $(".footer_btn").outerHeight(true) + 20
+        })
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        var myScroll;
+        var boot = false;
+
+        function moveLoaded() {
+            myScroll = new IScroll('#wraper', {
+                click: true,
+                probeType: 3,
+                shrinkScrollbars: false
+            });
+            myScroll.on("scroll", function () {
+                if (!boot) {
+                    if ((this.maxScrollY - this.y) > 50) {
+                        $("#scroller-pullUp .pull-up-msg").html("释放加载商品详情");
+                        $(".icon-double-angle-up").html("↓")
+                    } else {
+                        $(".icon-double-angle-up").html("↑")
+                        $("#scroller-pullUp .pull-up-msg").html("下拉加载商品详情");
+                    }
+                }
+            });
+            myScroll.on("slideUp", function () {
+                if (boot) {
+                    return false;
+                } else {
+                    if ((this.maxScrollY - this.y) > 50) {
+                        myScroll.on("scrollEnd", function () {
+                            if (!boot) {
+                                var heights = $("#scroller").height();
+                                var xhr = getDetails();
+                                $("#scroller").append(xhr);
+                                $("#scroller-pullUp").remove();
+                                myScroll.scrollTo(0, -heights, 400, IScroll.utils.ease.quadratic);
+                            }
+                            boot = true;
+                            myScroll.refresh();
+                        })
+                    }
+                }
+            });
+        }
+
+        // 请求商品详情
+        function getDetails() {
+            var xhr = $.ajax({
+                url: "commodity_details1.html",
+                async: false
+            }).responseText;
+            return xhr;
+        }
+
+        // 返回顶部
+        $(".items").on("click", ".return-top", function (e) {
+            myScroll.scrollTo(0, 0, 400, IScroll.utils.ease.quadratic);
+        })
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+        moveLoaded();
+    })
+</script>
+
+</html>

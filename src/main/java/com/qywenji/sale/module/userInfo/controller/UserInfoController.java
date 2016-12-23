@@ -32,7 +32,7 @@ public class UserInfoController extends BaseController {
         if(userInfo == null){
             return super.error("");
         }
-        UserInfo user = userInfoService.geByOpenId(userInfo.getOpenId());
+        UserInfo user = userInfoService.getByOpenId(userInfo.getOpenId());
         if(user != null){
             user.setHeadImgUrl(userInfo.getHeadImgUrl());
             user.setNickname(userInfo.getNickname());

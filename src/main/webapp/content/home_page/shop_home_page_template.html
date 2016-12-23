@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="description" content="胖吴货栈-中国首家分享式社交电商，基于微信场景实现礼物一键送达。让送礼、收礼、转赠礼物、群发礼品更有有趣，比微信红包更有快感。所有礼品都是掌柜精挑细选的好礼物（礼品包括生鲜、特产、干果等食品以及鲜花、家居、电子、图书等新奇特商品）。是中国高端礼品和商务礼品订制、礼物分发平台。" />
+<title>胖吴货栈 微信送礼神器。解决送礼、收礼和分享的服务过程，让礼品送收像发微信红包一样方便、快捷。</title>
+<link rel="stylesheet" href="../../css/swiper.min.css"/>
+<link rel="stylesheet" href="../../css/reset.css"/>
+<link rel="stylesheet" href="../../css/common/common.css"/>
+<link rel="stylesheet" href="../../css/list.css"/>
+<link rel="stylesheet" href="../../css/star-list.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/app-content.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/ad.css"/>
+
+<!--loading star!-->
+<script  src="../../js/common/jquery/jquery.min.js" type="text/javascript"></script>
+<script  src="../../js/common/jquery/jquery.pin.js" type="text/javascript"></script>
+<!-- <script type="text/javascript">
+	document.write('<div id="loading"><div class="loader">正在加载</div></div>');
+	window.onload = function(){   
+		document.getElementById('loading').style.display="none";
+	} 
+</script> -->
+<!--loading end!-->
+</head>
+
+<body>
+<!-- 导航 -->
+<div class="swiper-nav head-nav swiper-container-horizontal swiper-container-free-mode"
+     style="display: block;">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-active" pagedata="http://weixin.youzhipai.cn/productapi/12/shop_home_page.html"
+             index="3">
+            <a href="http://weixin.youzhipai.cn/productapi/12/shop_home_page.html"
+               class="red">
+                首页
+            </a>
+        </div>
+        <div class="slider" style="width: 70px;">
+        </div>
+        <div class="swiper-slide" pagedata="http://weixin.youzhipai.cn/warehouse/groupBuy/product/groupBuyList/12"
+             index="3">
+            <a href="http://weixin.youzhipai.cn/warehouse/groupBuy/product/groupBuyList/12">
+                拼团啦
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="71_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                生鲜
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="72_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                NFC果汁
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="80_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                零食匣子
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="73_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                南北特产
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="74_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                好米好面
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="75_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                酒
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="79_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                茶
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="76_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                现金卡券
+            </a>
+        </div>
+        <div class="swiper-slide" pagedata="78_shop_home_page.html" index="0">
+            <a href="javascript:;">
+                滋补养生
+            </a>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="webstoreId" value="13" />
+<!--富媒体star!-->
+<!--富媒体end!-->
+<!--购物车提示器star!-->
+<a class="shopping_cart_lu" href="javascript:void(0);" onclick="showShopingCart();">购物车<i style="display:none">0</i></a>
+<div id="win" class="win_none">
+</div>
+<!--购物车提示器end!-->
+<div id="nav_masklayer" class="layout_list" style="padding-bottom:45px;">
+<!--<div class="app-field clearfix" mod="search">
+	<div class="control-group">
+		<div class="search-box"><form id="tag_search_form" onsubmit="return false;"><input type="search" placeholder="请输入关键词" id="like_name"><button onclick="search()"></button></form></div>
+	</div>
+	
+</div>-->
+    <!--<div class="app-field clearfix" mod="banner" effect="" style="position: relative;" loop="loop">
+        <div class="control-group">
+            <div class="swiper-container swiper1 swiper-container-horizontal swiper-container-">
+
+                <ul class="swiper-wrapper" style="transition-duration: 300ms; transform: translate3d(-1920px, 0px, 0px);">
+                    <li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 320px;"><a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzAxMDk0Mg==&amp;hid=2&amp;sn=1d895b74fb97f9d4f5a843a4512f0afc#wechat_redirect" title="" class="custom-url"><img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1695509340&amp;end=1695566166"></a></li>
+                    <li class="swiper-slide" data-swiper-slide-index="0" style="width: 320px;"><a href="http://mp.weixin.qq.com/s/nSHfhnpk7eFYr3G_ROde7A" title="" class="custom-url"><img src="http://pic.youzhipai.cn/pic/readPic?begin=77066466&amp;end=77102699"></a></li><li class="swiper-slide" data-swiper-slide-index="1" style="width: 320px;"><a href="http://weixin.youzhipai.cn/warehouse/groupBuy/product/groupBuyList/12" title="" class="custom-url"><img src="http://pic.youzhipai.cn/pic/readPic?begin=77066466&amp;end=77102699(2)"></a></li>
+                    <li class="swiper-slide" data-swiper-slide-index="2" style="width: 320px;"><a href="http://weixin.youzhipai.cn/productapi/12/69_product_list.html" title="" class="custom-url"><img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1695509340&amp;end=1695566166"></a></li>
+                    <li class="swiper-slide" data-swiper-slide-index="3" style="width: 320px;"><a href="http://weixin.youzhipai.cn/other/fenxiang/video-list.html" title="" class="custom-url"><img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1695509340&amp;end=1695566166"></a></li>
+                    <li class="swiper-slide swiper-slide-prev" data-swiper-slide-index="4" style="width: 320px;"><a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzAxMDk0Mg==&amp;hid=2&amp;sn=1d895b74fb97f9d4f5a843a4512f0afc#wechat_redirect" title="" class="custom-url"><img src="http://pic.youzhipai.cn/pic/readPic?begin=77066466&amp;end=77102699"></a></li>
+                    <li class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" style="width: 320px;"><a href="http://mp.weixin.qq.com/s/nSHfhnpk7eFYr3G_ROde7A" title="" class="custom-url"><img src="http://pic.youzhipai.cn/pic/readPic?begin=77066466&amp;end=77102699(1)"></a></li>
+                </ul>
+                <div class="swiper-pagination swiper-pagination1"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+            </div>
+        </div>
+
+    </div>-->
+<div class="app-field clearfix" mod="banner" effect="" style="position: relative;"
+     loop="loop">
+    <div class="control-group">
+        <div class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <a href="http://mp.weixin.qq.com/s/nSHfhnpk7eFYr3G_ROde7A" title="" class="custom-url">
+                        <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=2059898130&amp;end=2059956247">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/warehouse/groupBuy/product/groupBuyList/12"
+                       title="" class="custom-url">
+                        <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1716225909&amp;end=1716324993">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/69_product_list.html"
+                       title="" class="custom-url">
+                        <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1891926878&amp;end=1891996749">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/other/fenxiang/video-list.html" title=""
+                       class="custom-url">
+                        <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1834064847&amp;end=1834107287">
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzAxMDk0Mg==&amp;hid=2&amp;sn=1d895b74fb97f9d4f5a843a4512f0afc#wechat_redirect"
+                       title="" class="custom-url">
+                        <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1695509340&amp;end=1695566166">
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-pagination">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app-field clearfix" mod="white">
+    <div class="control-group">
+        <div class="custom-white text-center" style="height: 5px; background-color: rgb(236, 236, 236);">
+        </div>
+    </div>
+</div>
+<div class="app-field clearfix" mod="imgNav" style="position: relative;">
+    <ul class="control-group clearfix custom-nav-1">
+        <li>
+            <a href="http://weixin.youzhipai.cn/productapi/12/68_shop_home_page.html"
+               title="" class="custom-url">
+                <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1694893419&amp;end=1694905797"
+                     style="display: block;">
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="app-field clearfix" mod="white">
+    <div class="control-group">
+        <div class="custom-white text-center" style="height: 2px; background-color: rgb(236, 236, 236);">
+        </div>
+    </div>
+</div>
+<div class="app-field clearfix" mod="imgNav" style="position: relative;">
+    <ul class="control-group clearfix custom-nav-1">
+        <li>
+            <a href="http://weixin.youzhipai.cn/productapi/12/54_product_list.html"
+               title="" class="custom-url">
+                <img src="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1697351028&amp;end=1697412822"
+                     style="display: block;">
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="app-field clearfix" mod="shopSlide" style="position: relative;">
+    <div class="control-group">
+        <!-- Swiper -->
+        <div class="swiper-goods">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/94_product.html" class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1691371255&amp;end=1691420581"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1691371255&amp;end=1691420581">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                江苏正宗高邮咸鸭蛋（10枚/盒）古法腌制 蛋黄油香
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥88
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000055)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/80001569_product.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1697076081&amp;end=1697120586"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1697076081&amp;end=1697120586">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                江苏正宗高邮麻鸭>松花蛋 10枚/盒
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥78
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80001569)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/93_product.html" class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1656581040&amp;end=1656627754"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1656581040&amp;end=1656627754">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                广东清远鸡初生蛋 小个头的聪明鸡蛋
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥98
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000001)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/154_product.html" class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1657501119&amp;end=1657557066"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1657501119&amp;end=1657557066">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                广东清远鸡+初生蛋组合 营养加倍更健康
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥266
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000002)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/50_product_list.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1960858536&amp;end=1960906194"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1960858536&amp;end=1960906194">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                重庆派森百NFC橙汁 纯粹天然0添加 248ml*9盒/箱
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥189
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000131)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/80000053_product_list.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1679585026&amp;end=1679628791"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1679585026&amp;end=1679628791">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                青岛船歌鱼水饺 墨鱼、黄花鱼、鲅鱼>、蛎虾430g*4【四大当家礼盒】
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥268
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000013)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/80001562_product.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1692306261&amp;end=1692478000"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1692306261&amp;end=1692478000">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                广西柳州螺蛳粉300g*5包 礼盒装
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥69
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80001562)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/80000191_product.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1681092320&amp;end=1681142914"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1681092320&amp;end=1681142914">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                                青岛啤酒原浆5L桶 青岛一厂生产限量直供 ， 每周四生产发货
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                    ¥199
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000191)" style="display: none;">
+                    </label>
+                </div>
+                <div class="swiper-slide">
+                    <a href="http://weixin.youzhipai.cn/productapi/12/68_shop_home_page.html"
+                       class="clearfix">
+                        <div class="photo-block">
+                            <img class="goods-photo js-goods-lazy" tmp="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1690586287&amp;end=1690609259"
+                                 src="../images/load.gif" data-echo="http://cdn.pic.youzhipai.cn/pic/readPic?begin=1690586287&amp;end=1690609259">
+                        </div>
+                        <div class="info clearfix btn1 info-price info-no-price">
+                            <p class="goods-title">
+                            </p>
+                            <p class="goods-price">
+                                <em>
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                    <label class="goods-buy btn1" onclick="showItem(80000000)" style="display: none;">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+		<p>All Rights Reservred@<span>2016</span> <span>二顺货栈</span>  版权所有</p>
+		<p>技术支持：胖吴电商</p>
+		<p><a href="http://www.youzhipai.cn/"></a></p>
+</div>
+</div>
+<div class="nav">
+    <nav>
+        <div id="nav_ul" class="nav_">
+            <ul class="box">
+                <li>
+                    <a href="http://weixin.youzhipai.cn/productapi/12/shop_home_page.html"
+                       class="">
+                        <span>
+                            全部商品
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="">
+                        <span>
+                            如何送礼
+                        </span>
+                    </a>
+                    <dl>
+                        <dd>
+                            <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzAxMDk0Mg==&hid=2&sn=1d895b74fb97f9d4f5a843a4512f0afc#wechat_redirect">
+                                <span>
+                                    胖吴课堂
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="http://weixin.youzhipai.cn/other/fenxiang/video-list.html">
+                                <span>
+                                    玩>转货栈
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="http://mp.weixin.qq.com/s?__biz=MzIyMzAxMDk0Mg==&mid=504662789&idx=1&sn=2e11f96d0c8c05f18bd8d791931f2a35&chksm=73c4e21444b36b02af9f6b9f4a9202535c0281f02180f5514f1456aaa5138e29df7d945de468&mpshare=1&scene=1&srcid=1128uKO2tcy8YmuOnhtl6n7c#rd">
+                                <span>
+                                    货栈攻略
+                                </span>
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:;" class="">
+                        <span>
+                            我的服务
+                        </span>
+                    </a>
+                    <dl>
+                        <dd>
+                            <a href="http://weixin.youzhipai.cn/warehouse/weixin/notMenu/redirect?tourl=/userCenter/12&sid=12">
+                                <span>
+                                    个人中心
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="http://weixin.youzhipai.cn/warehouse/weixin/menu/redirect?tourl=/invoice/showInvoiceAmount/12&sid=12">
+                                <span>
+                                    申请发票
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="http://weixin.youzhipai.cn/other/menu/12/FAQ.html">
+                                <span>
+                                    常见问题
+                                </span>
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="http://weixin.youzhipai.cn/other/menu/12/contact_us.html">
+                                <span>
+                                    联系客服
+                                </span>
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script type="text/javascript">
+        nav4.bindClick(document.getElementById("nav_ul").querySelectorAll("li>a"), document.getElementById("nav_masklayer"));
+    </script>
+</div>
+<!--<div class="nav">
+    <nav>
+        <div id="nav_ul" class="nav_">
+            <ul class="box">
+                <li><a href="http://weixin.youzhipai.cn/productapi/12/shop_home_page.html" class=""><span>全部商品</span></a></li>
+                <li><a href="javascript:;" class=""><span>如何送礼</span></a><dl><dd>
+                    <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMzAxMDk0Mg==&amp;hid=2&amp;sn=1d895b74fb97f9d4f5a843a4512f0afc#wechat_redirect"><span>胖吴课堂</span></a></dd><dd>
+                    <a href="http://weixin.youzhipai.cn/other/fenxiang/video-list.html"><span>玩转货栈</span></a></dd><dd>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzIyMzAxMDk0Mg==&amp;mid=504662789&amp;idx=1&amp;sn=2e11f96d0c8c05f18bd8d791931f2a35&amp;chksm=73c4e21444b36b02af9f6b9f4a9202535c0281f02180f5514f1456aaa5138e29df7d945de468&amp;mpshare=1&amp;scene=1&amp;srcid=1128uKO2tcy8YmuOnhtl6n7c#rd"><span>货栈攻略</span></a></dd></dl>
+                </li>
+                <li>
+                    <a href="javascript:;" class=""><span>我的服务</span></a><dl><dd>
+                    <a href="http://weixin.youzhipai.cn/warehouse/weixin/notMenu/redirect?tourl=/userCenter/12&amp;sid=12"><span>个人中心</span></a></dd><dd>
+                    <a href="http://weixin.youzhipai.cn/warehouse/weixin/menu/redirect?tourl=/invoice/showInvoiceAmount/12&amp;sid=12"><span>申请发票</span></a></dd><dd>
+                    <a href="http://weixin.youzhipai.cn/other/menu/12/FAQ.html"><span>常见问题</span></a></dd><dd>
+                    <a href="http://weixin.youzhipai.cn/other/menu/12/contact_us.html"><span>联系客服</span></a></dd></dl>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script type="text/javascript">nav4.bindClick(document.getElementById("nav_ul").querySelectorAll("li>a"), document.getElementById("nav_masklayer"));</script>
+</div>-->
+<script src="../../js/swiper-3.2.5.min.js"></script>
+<script src="../../js/banner-swiper.js"></script>
+<script src="../../js/echo.min.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../js/ad.js"></script>
+<script src="../../js/headNavSlide.js"></script>
+<script src="../../js/modeSearch.js"></script>
+<script src="../../js/hm.js"></script>
+<script src="../../js/fastclick.js"></script>
+<script type="text/javascript">
+/*$(document).ready(function(){
+	$(".nav").load("shopNav.html"); 
+});
+$(document).ready(function(){
+	$(".head-nav").load("headNav.html",function(){
+		window.slideInit();
+	}); 
+	
+});*/
+FastClick.attach(document.body);
+	//浮层广告
+	new Modal({popAni: "fadeIn",adLink: "http://testweixin.youzhipai.cn/testproductapi/13/180_product.html",adImgsrc: "http://pic.youzhipai.cn/pic/readPic?begin=331317040&end=331377670",adName: "大闸蟹",startTime: "2016/08/30 00:00:00",endTime: "2016/08/31 17:27:00",state: true,popTimeInterval: "null",popCallback: null,closeCallback: null});
+
+	// 懒加载
+    echo.init({
+        offset: 150,
+        throttle: 200
+    });
+	
+    var pwhz_sc_key='pwhz_sc_13';
+	cashFun();
+	function cashFun() {
+		var content = localStorage[pwhz_sc_key];
+		if(content == null){
+			return;
+		}
+		var pwhz_sc = JSON.parse(content);
+		var num = 0;
+		for(x in pwhz_sc){
+			num = parseInt(num) + parseInt(pwhz_sc[x].amount);
+		}
+		$(".shopping_cart_lu i").show().text(num);
+	}
+    $(function($){
+ 	   // 加入购物车
+ 	    var timer = null;
+ 		
+ 	    $(document).on("click",".add-to-cart",function(){
+ 	    	var num = $("#buyMeasure").val();
+ 	    	var oldNum = $(".shopping_cart_lu i").text();
+ 	        var newNum = parseInt(num) + parseInt(oldNum);
+
+ 	        $(".shopping_cart_lu i").show().text(newNum);
+
+ 	        $("#win").attr("class", "win_none");
+ 	        $(".success").fadeIn(500);
+ 	        if (timer) {
+ 	            clearInterval(timer);
+ 	        };
+
+ 	        timer = setInterval(function() {
+ 	           $(".success").fadeOut(500);
+ 	            clearInterval(timer);
+ 	        }, 1500);
+ 	        
+ 	       var pwhz_sc = localStorage[pwhz_sc_key];
+	    	if(pwhz_sc == null){
+	    		pwhz_sc = new Array();
+	    	}else{
+	    		pwhz_sc = JSON.parse(localStorage[pwhz_sc_key]);
+	    	}
+	    	var productItemId = $("#shoppingCart input[type='radio']:checked").val();
+	    	var map={productItemId:productItemId,amount:num};
+	    	var flag = true;
+	    	for(x in pwhz_sc){
+	    		var temp = pwhz_sc[x];
+	    		if(temp.productItemId == map.productItemId){
+	    			temp.amount = parseInt(temp.amount) + parseInt(map.amount);
+	    			flag = false;
+	    			break;
+	    		}
+	    	}
+	    	if(flag){
+	    		pwhz_sc.push(map);
+	    	}
+	    	localStorage[pwhz_sc_key]=JSON.stringify(pwhz_sc);
+ 	    });
+
+ 	    // // 点击“-”减少商品数量
+ 	    $(document).on("click","#minusMeasure",function(){
+ 	        var $input = $(this).next("input");
+ 	        var num_subtract = $input.val();
+ 	        if(num_subtract > 1){
+ 	            num_subtract--;
+ 	            $input.val(num_subtract);
+ 	            ajaxCommon($input,$(this).parent().next('#shoppingCartId').val(),num_subtract);
+ 	        }
+ 	    });
+
+ 	    function ajaxCommon (inputNum,id,num_subtract) {
+ 	        $.post($('http://testweixin.youzhipai.cn/warehouse/weixin/notMenu/redirect?tourl=/shoppingCart/save', { id: id,amount: num_subtract },
+ 	            function (result) {
+ 	                if(result == 'success'){
+ 	                    inputNum.val(num_subtract);
+ 	                    //cashFun();//计算商品总价
+ 	                }
+ 	            }));
+ 	    }
+
+ 	    // 点击“+”增加商品数量
+ 	    $(document).on("click","#addMeasure",function(){
+ 	        var $input = $(this).prev("input");
+ 	        var num_subtract = $input.val();
+ 	        num_subtract++;
+ 	        $input.val(num_subtract);
+ 	    });
+ 		
+ 	    $(document).on("click",".transparent_bg, .close", function(){
+ 	        $(".win").attr("class","win_none");
+ 	    });
+ 	   $(document).on("click","#win input[name='productItemId']", function(){
+ 		    		$(".commodity strong").html("\uffe5"+$(this).attr("pri"));
+ 		    		$(".commodity img").attr("src",$(this).attr("rel"))
+ 		});    
+    });
+    function showItem(pId){
+    	$.ajax({
+    		url:"http://t.padmin.youzhipai.cn/product/prod/scs",
+    		type:"post",
+    		dataType:"jsonp",
+    		data:{pId:pId},
+    		jsonp:"callback",
+    		success:function(data){
+    			$("#win").html(data.result).addClass("win").removeClass("win_none");
+    		},
+    		error:function(data,res){
+    			console.log(data);
+    		}
+    	});
+    }
+    function showShopingCart(){
+    	var content = localStorage[pwhz_sc_key];
+    	var str = "";
+    	if(content != null){
+    		var pwhz_sc = JSON.parse(content);
+    		for(x in pwhz_sc){
+    			if(x == pwhz_sc.length-1 ){
+    				str += pwhz_sc[x].productItemId + '_' + pwhz_sc[x].amount;
+    			}else{
+    				str += pwhz_sc[x].productItemId + '_' + pwhz_sc[x].amount + "-";
+    			}
+    		}
+    		localStorage.removeItem(pwhz_sc_key);
+    	}else{
+    		str="0"
+    	}
+    	
+    	location.href = "http://testweixin.youzhipai.cn/warehouse/weixin/notMenu/redirect?tourl=/shoppingCart/show/"+str+"/13&sid=13";
+    }
+
+</script>
+
+
+<script>
+$(document).on("search","#like_name",function(){
+    	var tagName = $("#like_name").val();
+        if(tagName == "" || tagName ==null || tagName == undefined ){
+    		 var xhr = AJAXHtml("shop_home_page.html");
+    		 $("#nav_masklayer").html(xhr);
+    	}else{
+    	var webstoreId = $("#webstoreId").val();
+    	$.ajax({
+    		url:'http://t.padmin.youzhipai.cn/product/tag/tagNameSection',
+    		type:"post",
+    		dataType:"jsonp",
+    		data:{tagName:encodeURIComponent(tagName),webstoreId:webstoreId},
+    		jsonp:"callback",
+    		success:function(data){
+    			console.log(data.result);
+    		       	$('#nav_masklayer').find('.app-field:not("div[mod=search]")').remove();
+    		       	$('#nav_masklayer').find('.clearfix').after('<div class="app-field clearfix" id="searchData" mod="shopping" style="position: relative; top: 0px; left: 0px;"></div>');
+    		       	$('#searchData').html(data.result);
+    		        echo.init({
+    		            offset: 150,
+    		            throttle: 200
+    		        });
+    		},
+    		error:function(data,res){
+    			console.log(data);
+    		}
+    	});
+    	$("#like_name").blur();
+      }
+    });
+   
+function search()
+{
+	var tagName = $("#like_name").val();
+    if(tagName == "" || tagName ==null || tagName == undefined ){
+		 var xhr = AJAXHtml("shop_home_page.html");
+		 $("#nav_masklayer").html(xhr);
+	}else{
+	var webstoreId = $("#webstoreId").val();
+	$.ajax({
+		url:'http://t.padmin.youzhipai.cn/product/tag/tagNameSection',
+		type:"post",
+		dataType:"jsonp",
+		data:{tagName:encodeURIComponent(tagName),webstoreId:webstoreId},
+		jsonp:"callback",
+		success:function(data){
+			console.log(data.result);
+		       	$('#nav_masklayer').find('.app-field:not("div[mod=search]")').remove();
+		       	$('#nav_masklayer').find('.clearfix').after('<div class="app-field clearfix" id="searchData" mod="shopping" style="position: relative; top: 0px; left: 0px;"></div>');
+		       	$('#searchData').html(data.result);
+		        echo.init({
+		            offset: 150,
+		            throttle: 200
+		        });
+		},
+		error:function(data,res){
+			console.log(data);
+		}
+	});
+	$("#like_name").blur();
+  }
+}
+function AJAXHtml(someHtml) {
+    var xhr = $.ajax({
+            url: someHtml,
+            async: false
+    }).responseText;
+    return $(xhr).siblings("#nav_masklayer").html();
+}   
+</script>
+
+<!--统计代码start!-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?849409cde2a85bfa7df24779dafa326a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--统计代码end!-->
+</body>
+</html>

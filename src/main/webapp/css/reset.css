@@ -1,0 +1,67 @@
+html{color:#000;background:#FFF;font-family: Helvetica,"STHeiti STXihei","Microsoft JhengHei","Microsoft YaHei",Tohoma,Arial;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,strong{padding:0;margin:0;font-family: Helvetica,"STHeiti STXihei","Microsoft JhengHei","Microsoft YaHei",Tohoma,Arial;}
+/*body {font-size: 12px;}*/
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;}
+a{text-decoration:none; color:#333; outline:none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+var,em,strong{font-style:normal;}
+em,strong,th,var{font-style:inherit;font-weight:inherit;}
+li{list-style:none;}
+i {font-style:normal}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,button,textarea,select,optgroup,option{font-family:inherit; font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+input,select {-webkit-appearance:none; appearance:none}
+input,textarea {-webkit-tap-highlight-color:rgba(255,0,0,0);}
+.clearfix:after{content:'\200B';clear:both;display:block;height:0px;}
+.clearfix {*zoom:1;}
+.ellipsis{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
+/*loading动画star*/
+#loading {position:fixed; width:100%; height:100%; background:#FFF url(../images/loading.png) no-repeat center center; background-size:23px auto; z-index:1100}
+.loader {font-size:10px; text-indent:-9999em; border-top:3px solid rgba(0, 0, 0, 0.1); border-right:3px solid rgba(0, 0, 0, 0.1); border-bottom:3px solid rgba(0, 0, 0, 0.1); border-left:3px solid #999; -webkit-animation: load 0.8s infinite linear; -moz-animation: load 0.8s infinite linear; animation:load 0.8s infinite linear}
+.loader, .loader:after {border-radius:50%; width:48px; height:48px; position:absolute; top:50%; left:50%; margin:-27px 0 0 -27px}
+@-webkit-keyframes load {0% {-webkit-transform:rotate(0deg); transform: rotate(0deg)} 100% {-webkit-transform: rotate(360deg); transform: rotate(360deg)}}
+@keyframes load {0% {-webkit-transform: rotate(0deg); transform: rotate(0deg)} 100% {-webkit-transform: rotate(360deg); transform: rotate(360deg)}}
+/*loading动画end*/
+
+/*赠送他人提示浮层star*/
+.tips {width:100%; height:100%; background-image:url(../images/txt_tips.png),url(../images/earth.png); background-repeat:no-repeat; background-position:center -60px,left bottom; background-size:100% auto,50% auto}
+.tips2 {width:100%; height:100%; background-image:url(../images/txt_tips_2.png),url(../images/earth.png); background-repeat:no-repeat; background-position:center -60px,left bottom; background-size:100% auto,50% auto}
+.tips3 {width:100%; height:100%; background-image:url(../images/txt_tips_3.png),url(../images/earth.png); background-repeat:no-repeat; background-position:center -60px,left bottom; background-size:100% auto,50% auto}
+/*赠送他人提示浮层end*/
+
+/*二维码star*/
+.qr_code_none {display:none}
+.layout_qr_code {width:100%; height:100%; position:fixed; left:0; top:0; right:0; bottom:0; z-index:2000; background:rgba(255,255,255,0.95); -webkit-animation:bg_w 0.5s ease-out both; -moz-animation:bg_w 0.5s ease-out both; animation:bg_w 0.5s ease-out both}
+@-webkit-keyframes bg_w {0% {background:rgba(255,255,255,0)} 100% {background:rgba(255,255,255,0.95)}}
+@keyframes bg_w {0% {background:rgba(255,255,255,0)} 100% {background:rgba(255,255,255,0.95)}}
+.layout_qr_code div {display:inline-block; width:52%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); font-size:0; -webkit-animation:m_b_2 0.5s 0.3s ease-out both; -moz-animation:m_b_2 0.5s 0.3s ease-out both; animation:m_b_2 0.5s 0.3s ease-out both}
+.layout_qr_code div span {display:block; padding:5px; background:#FFF; border:1px solid #dbdbdb}
+@-webkit-keyframes m_b_2 {0% {transform:translate(-50%,0%); -webkit-transform:translate(-50%,0%); opacity:0; -webkit-opacity:0} 100% {transform:translate(-50%,-50%); -webkit-transform:translateY(-50%,-50%); opacity:1; -webkit-opacity:1}}
+@keyframes m_b_2 {0% {transform:translate(-50%,0%); -webkit-transform:translate(-50%,0%); opacity:0; -webkit-opacity:0} 100% {transform:translate(-50%,-50%); -webkit-transform:translateY(-50%,-50%); opacity:1; -webkit-opacity:1}}
+.layout_qr_code div img {width:100%}
+.layout_qr_code div p {margin-top:5px; line-height:1.5rem; font-size:0.75rem; text-align:center}
+.layout_qr_code div p strong {display:block; font-size:0.875rem}
+/*二维码end*/
+
+/*遮罩star*/
+.win_none {display:none}
+.win {position:fixed; z-index:109; left:0; top:0; right:0; bottom:0; background:rgba(0,0,0,0.9); -webkit-animation:bg 0.3s ease-out both; -moz-animation:bg 0.3s ease-out both; animation:bg 0.3s ease-out both}
+.win .transparent_bg {position:fixed; z-index:11; left:0; right:0; top:0; bottom:0}
+@-webkit-keyframes bg {0% {background:rgba(0,0,0,0)} 100% {background:rgba(0,0,0,0.8)}}
+@keyframes bg {0% {background:rgba(0,0,0,0)} 100% {background:rgba(0,0,0,0.8)}}
+.win .layout_win {background:#FFF; position:absolute; left:0; bottom:0; right:0; z-index:12; transform:translateY(110%); -webkit-transform:translateY(110%); -webkit-animation:m_b 0.3s ease-out both; -moz-animation:m_b 0.3s ease-out both; animation:m_b 0.3s ease-out both}
+@-webkit-keyframes m_b {0% {transform:translateY(110%); -webkit-transform:translateY(110%)} 100% {transform:translateY(0); -webkit-transform:translateY(0)}}
+@keyframes m_b {0% {transform:translateY(110%); -webkit-transform:translateY(110%)} 100% {transform:translateY(0); -webkit-transform:translateY(0)}}
+/*遮罩end*/
+
+/*富媒体*/
+.rich_media {position:fixed; left:0; right:0; top:0; bottom:0; width:100%; height:100%; z-index:2000}
+.rich_media .wrap {position:absolute; width:88%; left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); font-size:0}
+.rich_media .wrap a {display:block}
+.rich_media .wrap img {display:block; width:100%}
+.rich_media .wrap span {position:absolute; display:block; top:-45px; right:0; width:25px; height:25px; border:2px solid #FFF; border-radius:50%; -webkit-border-radius:50%; background:#000}
+.rich_media .wrap span:before {content:""; display:block; position:absolute; width:2px; height:17px; background:#FFF; border-radius:2px; -webkit-border-radius:2px; transform:rotate(45deg); -webkit-transform:rotate(45deg); left:12px; top:4px; z-index:2}
+.rich_media .wrap span:after {content:""; display:block; position:absolute; width:2px; height:17px; background:#FFF; border-radius:2px; border-radius:2px; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); left:12px; top:4px; z-index:2}

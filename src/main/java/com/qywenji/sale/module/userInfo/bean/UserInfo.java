@@ -1,6 +1,7 @@
 package com.qywenji.sale.module.userInfo.bean;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by CAI_GC on 2016/11/30.
@@ -19,8 +20,24 @@ public class UserInfo {
     private String city;
     private String province;
     private String country;
-    private Long subscribeTime;
+    private Long subscribeTime = 0L;
     private String headImgUrl;
+    private Date ctime = new Date();
+
+    public UserInfo() {
+    }
+
+    public UserInfo(Integer subscribe, String openId, String nickname, Integer sex, String city, String province, String country, Long subscribeTime, String headImgUrl) {
+        this.subscribe = subscribe;
+        this.openId = openId;
+        this.nickname = nickname;
+        this.sex = sex;
+        this.city = city;
+        this.province = province;
+        this.country = country;
+        this.subscribeTime = subscribeTime;
+        this.headImgUrl = headImgUrl;
+    }
 
     public Integer getId() {
         return id;
@@ -100,5 +117,13 @@ public class UserInfo {
 
     public void setHeadImgUrl(String headImgUrl) {
         this.headImgUrl = headImgUrl;
+    }
+
+    public Date getCtime() {
+        return ctime;
+    }
+
+    public void setCtime(Date ctime) {
+        this.ctime = ctime;
     }
 }

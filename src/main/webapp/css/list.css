@@ -1,0 +1,124 @@
+/*商品列表*/
+.list_nav {margin:0 3%; line-height:2.75rem; height:2.75rem; font-size:0.9375rem; font-weight:600; /*border-bottom:1px solid #e5e5e5;*/ position:relative; color:#343434}
+.list_nav a {display:block; line-height:2.75rem; height:2.75rem; font-size:0.9375rem; font-weight:600; color:#343434}
+.list_nav a:before {content:"更多"; display:block; position:absolute; right:10px; color:#999; line-height:2.75rem; height:2.75rem; font-size:0.75rem}
+.list_nav a:after {content:""; display:block; position:absolute; right:2px; top:17px; width:8px; height:8px; border-top:2px solid #b4b4b4; border-right:2px solid #b4b4b4; transform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.banner_ad {margin:0}
+.banner_ad img {width:100%; display:block}
+.list ul {margin:0; padding:5px}
+.list ul:after {content:""; clear:both; display:block; height:0; overflow:hidden}
+.list li {width:48%; padding:0 1%; margin-bottom:3%; float:left; background:#FFF; position:relative}
+.list li:nth-child(odd) {border-left:none}
+.list li:nth-child(even) {border-left:none; border-right:none}
+.list li:first-child,
+.list li:nth-child(2) {border-top:none}
+.list li > a {display:block; padding:0%; overflow:hidden; border:1px solid #E5E5E5}
+.list a:after {content:''; clear:both; display:block; width:0; height:0; overflow:hidden}
+.list .img {display:block; width:100%; font-size:0; overflow:hidden; position:relative}
+.list .img img {max-height:100%; margin:auto; display:block; position:absolute; left:0; right:0; top:0; bottom:0; height:auto; max-width:100%; vertical-align:middle; border:0}
+
+/*产品列表小图适配-star*/
+@media (min-width: 320px) {
+.list .img {height:146.8px}
+}
+@media (min-width: 360px) {
+.list .img {height:166px}
+}
+@media (min-width: 375px) {
+.list .img {height:173.19px}
+}
+@media (min-width: 384px) {
+.list .img {height:177.52px}
+}
+@media (min-width: 412px) {
+.list .img {height:190.95px}
+}
+@media (min-width: 414px) {
+.list .img {height:191.91px}
+}
+@media (min-width: 415px) {
+.small-pic .photo-block {height: 191.91px}
+}
+/*产品列表小图适配-end*/
+
+.list li:nth-child(2n-1) a{}
+.list li h2 {margin:5px 3% 0 3%; padding:0; font-weight:400; font-size:0.8125rem; line-height:1.25rem; height:2.5rem; overflow:hidden;}
+.list li p {margin:0 3% 0px 3%; font-size:1rem; line-height:35px; height:35px; color:#da1c1c; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; position:relative}
+.list li span.add-shopping-cart {display:inline-block; position:absolute; right:6%; bottom:0px; padding:0; background:url(../images/common/add_shopping_cart.png) no-repeat right center; background-size:29px 15px; width:68px; height:35px; overflow:hidden}
+.list li p:first-letter {font-size:0.75rem}
+.list li p i {display:none; margin-left:5px; font-size:0.75rem; color:#999; text-decoration:line-through; font-style:normal}
+.list .no_more {line-height:4rem; text-align:center; font-size:0.75rem; color:#666}
+
+.icon_list {border-bottom:5px solid #EEE}
+.icon_list ul {padding:10px 0 0 0}
+.icon_list ul:after {content:""; display:block; clear:both; height:0}
+.icon_list li {float:left; width:25%; text-align:center; padding-bottom:10px}
+.icon_list li a {display:block; color:#666}
+.icon_list li span {font-size:0.8125rem; display:block}
+.icon_list li i {display:block; margin:0 auto 5px auto; width:40px; height:40px; border-radius:45px; -webkit-border-radius:45px; overflow:hidden; background:#fff; font-size:0}
+.icon_list li i img {display:block; width:100%}
+
+.Recommend {border-bottom:5px solid #EEE}
+.Recommend .left {float:left; width:50%; position:relative}
+.Recommend .left:after,
+.Recommend .right a:nth-child(2):after {content:""; display:block; position:absolute; width:1px; right:0; top:0; bottom:0; background:#EEE; z-index:200}
+.Recommend .right {float:right; width:50%}
+.Recommend a {display:block; font-size:0; overflow:hidden}
+.Recommend img {display:block; width:100%}
+.Recommend .right a {float:left; position:relative}
+.Recommend .right a:first-child {width:100%}
+.Recommend .right a:first-child:after {content:""; display:block; position:absolute; height:1px; right:0; left:0; bottom:0; background:#EEE; z-index:200}
+.Recommend .right a:nth-child(2),
+.Recommend .right a:nth-child(3) {width:50%}
+
+.win.f_ad {z-index:1000}
+.f_ad > span {display:block; z-index:1001; position:absolute; width:80%; left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); -webkit-animation:m_b_2 0.3s ease-out both; -moz-animation:m_b_2 0.3s ease-out both; animation:m_b_2 0.3s ease-out both}
+.f_ad a {display:block}
+.f_ad img {display:block; width:100%}
+.f_ad > span > span {display:block; position:absolute; right:0; top:-45px; width:25px; height:25px; text-indent:-999px; overflow:hidden; border-radius:25px; -webkit-border-radius:25px; border:2px solid #FFF; background:#000; z-index:1002}
+.f_ad > span > span:before {content:""; display:block; width:16px; height:2px; background:#FFF; border-radius:3px; -webkit-border-radius:3px; position:absolute; transform:rotate(45deg); -webkit-transform:rotate(45deg); left:5px; top:11px}
+.f_ad > span > span:after {content:""; display:block; width:2px; height:16px; background:#FFF; border-radius:3px; -webkit-border-radius:3px; position:absolute; transform:rotate(45deg); -webkit-transform:rotate(45deg); left:11px; top:4px}
+
+/*弹出选择数量star*/
+.win .layout_win .close {display:block; width:30px; height:30px; overflow:hidden; position:absolute; right:3%; top:3%;cursor:pointer;}
+.win .layout_win .close:after {content:""; position:absolute; left:50%; top:0%; display:block; height:30px; width:1px; background:#666; transform:rotate(45deg); -webkit-transform:rotate(45deg)}
+.win .layout_win .close:before {content:""; position:absolute; left:50%; top:0; display:block;  height:30px; width:1px; background:#666; transform:rotate(315deg); -webkit-transform:rotate(315deg)}
+.win .commodity {margin:4% 4% 0 4%}
+.win .commodity:after {content:""; display:block; clear:both; height:15px; border-bottom:1px solid #EEE; color:#FFF; overflow:hidden}
+.win .commodity span.img {float:left; width:44px; height:44px; font-size:0; overflow:hidden; border:1px solid #d2d2d2; border-radius:3px; -webkit-border-radius:3px; position:relative} 
+.win .commodity span.img img {max-height:100%; margin:auto; display:block; position:absolute; left:0; right:0; top:0; bottom:0; height:auto; max-width:100%; vertical-align:middle; border:0}
+.win .commodity div {display:block; padding:0 20px 0 10px; margin-left:15%}
+.win .commodity div h3 {display:block; font-weight:400; font-size:0.75rem; line-height:1.25rem} 
+.win .commodity div strong {color:#da1c1c; display:block; margin-top:5px; font-size:0.875rem;}
+.win .layout_win ul {margin:0 4%}
+.win .layout_win ul:after {content:"."; display:block; clear:both; height:0px; color:#FFF; overflow:hidden}
+.win .layout_win .spec li {clear:both; border-bottom:1px solid #EEE}
+.win .layout_win .spec li h3{margin:0; padding:0; display:block; line-height:2.5rem; height:2.5rem; font-weight:400; font-size:0.875rem; color:#8a8a8a}
+.win .layout_win .spec li P label {display:block; float:left; margin:0 15px 15px 0; cursor:pointer; position:relative}
+.win .layout_win .spec li P label span {display:block; line-height:1.75rem; height:1.75rem; padding:0 8px; border:1px solid #DDD; color:#343434; border-radius:2px; -webkit-border-radius:2px}
+.win .layout_win .spec li P label input {display:block; width:100%; height:100%; border:1px solid #CCC; position:absolute; left:0; top:0; z-index:10; opacity:0} 
+.win .layout_win .spec li P label input[type=radio]:checked + span {border-color:#F60; color:#F60; background:url(../images/sel_on.gif) no-repeat right bottom; background-size:15px auto}
+.win .layout_win .spec li P:after {content:""; clear:both; display:block; height:0; overflow:hidden}
+.win .layout_win .num li {float:left; width:50%; line-height:80px; height:80px; font-size:0.875rem}
+.win .layout_win .num li span:first-child,
+.order .select li span {margin-top:27px; float:right; font-size:0; display:block; border:1px solid #959595; height:36px; overflow:hidden; border-radius:2px; -webkit-border-radius:2px}
+.win .layout_win .num li span:first-child a,
+.order .select li span a {display:block; float:left; position:relative; height:36px; width:36px; overflow:hidden; text-indent:-999px; font-size:2rem; color:#938f8e; border-right:1px solid #959595}
+.win .layout_win .num li span:first-child a:after,
+.order .select li span a:after {content:""; width:16px; height:2px; position:absolute; background:#666; border-radius:2px; left:50%; top:50%; margin-top:-1px; margin-left:-8px}
+.win .layout_win .num li span:first-child a:last-child:before,
+.order .select li span a:last-child:before {content:""; position:absolute; background:#666; border-radius:2px; left:50%; top:50%; width:2px; height:16px; top:50%; margin-top:-8px; margin-left: -1px}
+.win .layout_win .num li span:first-child a:active {background-color:#f2f2f2}
+.win .layout_win .num li span:first-child a:last-child,
+.order .select li span a:last-child {border-right:none; border-left:1px solid #959595}
+.win .layout_win .num li span:first-child input,
+.order .select li span input {display:block; border:none; outline:none; float:left; text-align:center; width:40px; font-style:normal; line-height:36px; height:36px; overflow:hidden; font-size:1rem}
+.win .layout_win .btn {padding:10px 4% 0 4%; display:block; height:56px; background:#EEE; text-align:center}
+.win .layout_win .btn a,
+.win .layout_win .btn span{display:inline-block; font-size:1rem; color:#fff; border-radius:5px; -webkit-border-radius:5px; width:100%; text-align:center; line-height:46px; height:46px; background:#da1c1c;cursor:pointer;}
+.win {z-index:300}
+.win .transparent_bg {z-index:301;cursor:pointer;}
+.win .layout_win {z-index:302}
+/*弹出选择数量end*/
+/*富媒体弹出无透明背景*/
+.win.rich_media {background:none; animation:none; -webkit-animation:none}

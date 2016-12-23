@@ -7,6 +7,7 @@ import com.qywenji.sale.commons.utils.CookieUtil;
 import com.qywenji.sale.commons.utils.RealIpUtil;
 import com.qywenji.sale.commons.utils.RedisUtil;
 import com.qywenji.sale.module.userInfo.bean.UserInfo;
+import com.qywenji.sale.module.userInfo.constant.UserInfoConstant;
 import com.qywenji.sale.module.userInfo.dao.UserInfoDao;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -32,7 +33,7 @@ public class UserInfoService extends BaseService<UserInfo>{
     @Autowired
     private UserInfoDao userInfoDao;
 
-    public UserInfo geByOpenId(String openId) {
+    public UserInfo getByOpenId(String openId) {
         return userInfoDao.getByOpenId(openId);
     }
 
@@ -49,7 +50,7 @@ public class UserInfoService extends BaseService<UserInfo>{
             if(StringUtils.isNotBlank(UserInfoStr)){
                 userInfo = JSON.parseObject(UserInfoStr, UserInfo.class);
             }else{
-                userInfo = this.geByOpenId(value);
+                userInfo = this.getByOpenId(value);
                 RedisUtil.set(userInfo.getOpenId(), JSONObject.toJSONString(userInfo), 60 * 60 * 24 * 1);
             }
         }
@@ -57,5 +58,47 @@ public class UserInfoService extends BaseService<UserInfo>{
             logger.info(String.format("***********userInfo is null*********** Path from %s,IP: from %s ",request.getRequestURI(), RealIpUtil.getIpAddr(request)));
         }
         return userInfo;
+    }
+
+    public void checkAndSave(UserInfo userInfo) {
+        String openId = userInfo.getOpenId();
+        UserInfo user = this.getByOpenId(openId);
+        Boolean flag = false;
+        if(user == null){
+            Long lock = RedisUtil.increa(UserInfoConstant.LOCK + openId);
+            RedisUtil.set(UserInfoConstant.LOCK + openId, lock + "", UserInfoConstant.LOCK_TIME);
+            if (lock == 1) {
+                this.save(userInfo);
+                RedisUtil.set(UserInfoConstant.SUBSCRIBE_CONSUMER, JSONObject.toJSONString(userInfo), UserInfoConstant.SUBSCRIBE_CONSUMER_TIME);
+            }else {
+                String userInfoStr = RedisUtil.get(UserInfoConstant.SUBSCRIBE_CONSUMER);
+                if (StringUtils.isNotBlank(userInfoStr)) {
+                    userInfo = JSONObject.parseObject(userInfoStr, UserInfo.class);
+                    if (userInfo.getId() == null) {
+                        this.save(userInfo);
+                        return;
+                    }
+                }
+                user = this.getByOpenId(openId);
+                if (user == null) {
+                    this.save(userInfo);
+                } else {
+                    flag = true;
+                }
+            }
+        }else {
+            flag = true;
+        }
+        if (flag) {
+            user.setNickname(userInfo.getNickname());
+            user.setHeadImgUrl(userInfo.getHeadImgUrl());
+            user.setSubscribe(userInfo.getSubscribe());
+            user.setSubscribeTime(userInfo.getSubscribeTime());
+            user.setSex(userInfo.getSex());
+            user.setProvince(userInfo.getProvince());
+            user.setCity(userInfo.getCity());
+            user.setCountry(userInfo.getCountry());
+            this.save(user);
+        }
     }
 }

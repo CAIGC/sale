@@ -48,7 +48,7 @@ public class DispatchController extends BaseController {
         if (StringUtils.isBlank(openId)) {
             return null;
         }
-        UserInfo userInfo = userInfoService.geByOpenId(openId);
+        UserInfo userInfo = userInfoService.getByOpenId(openId);
         if (userInfo == null) {
             String redirectUrl = request.getHeader("Referer") + "/wechat/getUserInfo/dispatch?tourl=" + tourl;
             response.sendRedirect(wechatService.getUserInfoCodeUrl(redirectUrl));

@@ -1,7 +1,10 @@
 package com.qywenji.sale.module.wechat.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.qywenji.sale.commons.controller.BaseController;
+import com.qywenji.sale.commons.utils.RedisUtil;
 import com.qywenji.sale.module.userInfo.bean.UserInfo;
+import com.qywenji.sale.module.userInfo.constant.UserInfoConstant;
 import com.qywenji.sale.module.userInfo.service.UserInfoService;
 import com.qywenji.sale.module.wechat.service.WechatService;
 import org.apache.commons.lang3.StringUtils;
@@ -45,12 +48,28 @@ public class MenuDispatchController extends BaseController {
         if (StringUtils.isBlank(openId)) {
             return null;
         }
-        UserInfo userInfo = userInfoService.geByOpenId(openId);
+        UserInfo userInfo = userInfoService.getByOpenId(openId);
         if (userInfo == null) {
-            userInfo = wechatService.getSubscribeUserInfo(openId);
-            if (userInfo == null) {
+            UserInfo user = wechatService.getSubscribeUserInfo(openId);
+            if (user == null) {
                 logger.info("获取已关注用户基本信息失败");
                 return null;
+            }else{
+                userInfo = user;
+                /*Long lock = RedisUtil.increa(UserInfoConstant.LOCK + openId);
+                RedisUtil.set(UserInfoConstant.LOCK + openId, lock + "", UserInfoConstant.LOCK_TIME);
+                if(lock == 1){
+                    userInfo =  userInfoService.save(user);
+                    RedisUtil.set(UserInfoConstant.SUBSCRIBE_CONSUMER + openId, JSONObject.toJSONString(userInfo), UserInfoConstant.SUBSCRIBE_CONSUMER_TIME);
+                }else{
+                    String userInfoStr = RedisUtil.get(UserInfoConstant.SUBSCRIBE_CONSUMER);
+                    if(StringUtils.isNotBlank(userInfoStr)){
+                        userInfo = JSONObject.parseObject(userInfoStr, UserInfo.class);
+                    }else{
+                        userInfo = userInfoService.getByOpenId(openId);
+                    }
+
+                }*/
             }
         }
         userInfoService.setUserInfoInCookieAndRedis(request, response, userInfo);
