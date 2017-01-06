@@ -63,7 +63,21 @@ public class UserInfoService extends BaseService<UserInfo>{
     public void checkAndSave(UserInfo userInfo) {
         String openId = userInfo.getOpenId();
         UserInfo user = this.getByOpenId(openId);
-        Boolean flag = false;
+        if(user == null){
+            this.save(userInfo);
+        }else{
+            user.setNickname(userInfo.getNickname());
+            user.setHeadImgUrl(userInfo.getHeadImgUrl());
+            user.setSubscribe(userInfo.getSubscribe());
+            user.setSubscribeTime(userInfo.getSubscribeTime());
+            user.setSex(userInfo.getSex());
+            user.setProvince(userInfo.getProvince());
+            user.setCity(userInfo.getCity());
+            user.setCountry(userInfo.getCountry());
+            this.save(user);
+        }
+        RedisUtil.delByKey(userInfo.getOpenId());
+        /*Boolean flag = false;
         if(user == null){
             Long lock = RedisUtil.increa(UserInfoConstant.LOCK + openId);
             RedisUtil.set(UserInfoConstant.LOCK + openId, lock + "", UserInfoConstant.LOCK_TIME);
@@ -99,6 +113,6 @@ public class UserInfoService extends BaseService<UserInfo>{
             user.setCity(userInfo.getCity());
             user.setCountry(userInfo.getCountry());
             this.save(user);
-        }
+        }*/
     }
 }

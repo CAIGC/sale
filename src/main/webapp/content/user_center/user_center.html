@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>文记烧腊</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="../../css/reset.css"/>
+	<link rel="stylesheet" th:href="@{/css/common/common.css}" href="../../css/common/common.css"/>
+    <link rel="stylesheet" th:href="@{/css/user_center.css}" href="../../css/user_center.css"/>
+
+</head>
+<body>
+	<div class="header">
+    	<div class="left">
+			<img th:src="${userInfo.headImgUrl}" src="../../images/user_center/img6.jpg" />
+			<span th:text="${userInfo.nickname}">微信昵称</span>
+        </div>
+
+	</div>
+	<ul class="main">
+		<!--<li class="package_manage">
+			<div class="manage_btn">
+				<a th:href="@{'/packageListAndDetail/0/'+${sid}+'/1'}" href="../../my_order.html">
+					<em></em>
+					<strong>犒劳自己</strong>
+				</a>
+				<a th:href="@{'/packageListAndDetail/1/'+${sid}+'/1'}" href="../../for_friend.html" >
+					<em></em>
+					<strong>我送朋友</strong>
+				</a>
+				<a th:href="@{'/friendGaveList/'+${sid}+'/1/'}" href="../../friend_gave.html">
+					<em></em>
+					<strong>朋友送我</strong>
+				</a>
+			</div>
+		</li>-->
+		<li class="fun_list list_1">
+			<a class="stock" href="#"><span>我的礼品库<i  th:if="${unFinishCount > 0}"></i></span></a>
+			<a th:href="@{'/orderList/'+${sid}+'/1'}" href="order_list.html" title="">我的购物记录</a>
+		</li>
+        <li class="fun_list group">
+            <a th:href="@{'/groupBuy/showGroupOrderList/'+${sid}}" href="../group/group-order.html" title="">我的团购</a>
+        </li>
+		<li class="fun_list list_2">
+			<a th:href="@{'/showVoucherIndex/'+${sid}}" href="../voucher_card/account.html" title="">我的账户</a>
+			<a th:href="@{'/showAllTickets/'+${sid}}" href="coupon_list.html" title=""><span>我的优惠券<i class="red_dot" style="display:none"></i></span></a>
+			<a style="display:none" href="" title="">我的卡券</a>
+		</li>
+		<li class="fun_list list_3">
+			<a th:href="@{'/address/3?sid='+${sid}}" href="address.html" title="">收货地址管理</a>
+		</li>
+	</ul><!-- #BeginLibraryItem "/Library/copyright.lbi" -->
+
+</body>
+<script th:src="@{/js/common/jquery/jquery.min.js}" src="../../js/common/jquery/jquery.min.js" type="text/javascript"></script>
+
+</html>
+
+     

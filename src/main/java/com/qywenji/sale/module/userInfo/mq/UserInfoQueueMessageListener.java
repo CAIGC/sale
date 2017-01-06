@@ -62,7 +62,7 @@ public class UserInfoQueueMessageListener implements MessageListener {
     }
 
     /**
-     * 关注处理
+     * 关注处理(1、关注保存用户信息，2、通过网页授权保存用户信息)
      * @param data
      */
     private void subscribeHandle(String data) {

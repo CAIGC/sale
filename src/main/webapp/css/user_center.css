@@ -1,0 +1,200 @@
+body,html {
+	width: 100%;
+	height: 100%;
+	background-color: #eeeeee;
+}
+.header {
+	height:105px;
+	overflow: hidden;
+	padding:0 4%;
+	background: red url(../images/user_center/header_bkg.png) no-repeat;
+	background-size:cover;
+}
+.header .left {
+	float:left	
+}
+.header .right {
+	float:right;
+	text-align:center	
+}
+.header .right a {
+	display:block;
+	color:#fff;
+	font-weight:bold	
+}
+.header .left img {
+	float: left;
+	display:block;
+	margin-top:25px;
+	width:43px;
+	height:43px;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.header .left span {
+	display:block;
+	float:left;
+	margin-left:7px;
+	color: #fff;
+	font-size:1rem;
+	line-height:105px;
+	font-weight:bold;
+}
+.header .right span {
+	font-weight:bold;
+	display:block;
+	color:#FFF;
+}
+.header .right img {
+	margin-top:20px;
+	width:40px;
+	height:40px;
+	animation: waving linear 0.8s infinite both;
+    -webkit-animation:waving linear 0.8s infinite both;
+}
+
+@-webkit-keyframes waving {
+	0%{transform:translateY(0px); -webkit-transform:translateY(0px)}
+	45%{transform:translateY(-10px); -webkit-transform:translateY(-10px)}
+	100%{transform:translateY(0px); -webkit-transform:translateY(0px)}
+}
+@keyframes waving {
+	0%{transform:translateY(0px); -webkit-transform:translateY(0px)}
+	45%{transform:translateY(-10px); -webkit-transform:translateY(-10px)}
+	100%{transform:translateY(0px); -webkit-transform:translateY(0px)}
+}
+
+
+.header .right strong {
+	display:block;
+	font-size:0.75rem;
+	font-weight:400;
+}
+
+.main li {
+	margin:10px 0 0 0;
+	background-color: #fff;
+}
+.package_manage h2 {
+	height: 36px;
+	padding:0 4%;
+	border-bottom: 1px solid #eee;
+	color: #4d4d4d;
+	font-size:14px;
+	line-height: 36px;
+}
+.manage_btn:after {content:""; display:block; clear:both; height:0}
+.manage_btn a {
+	padding:15px 0;
+	float: left;
+	width: 33%;
+	display:block; 
+	text-align: center;
+	position:relative;
+}
+.manage_btn a:nth-child(1):after,
+.manage_btn a:nth-child(2):after {
+	content:""; 
+	display:block;
+	width:1px;
+	height:70%;
+	background:#d7d7d7;
+	position:absolute;
+	right:0;
+	top:15%;
+}
+.manage_btn a:nth-child(3) {
+	width:34%	
+}
+.manage_btn a em,
+.manage_btn a strong {
+	display: block;
+}
+.manage_btn a em {
+	width: 20px;
+	height: 20px;
+	margin:0 auto 3px auto;
+}
+.manage_btn a:nth-child(1) em {
+	background: url(../images/user_center/give_self.png) center no-repeat;
+	background-size: 100% 100%;
+}
+.manage_btn a:nth-child(2) em {
+	background: url(../images/user_center/like.png) center no-repeat;
+	background-size: 100% 100%;
+}
+.manage_btn a:nth-child(3) em {
+	background: url(../images/user_center/friend_giveme.png) center no-repeat;
+	background-size: 100% 100%;
+}
+.manage_btn a strong {
+	color: #4d4d4d;
+	font-size: 0.875rem;
+	line-height: 20px;
+}
+.fun_list {
+	padding:0 0 0 4%;
+}
+.fun_list a {
+	position: relative;
+	display: block;
+	height: 45px;
+	padding-left:25px;
+	color: #4d4d4d;
+	font-size:0.875rem;
+	line-height: 45px;
+}
+.fun_list a:last-child {
+	border-bottom: 0;
+}
+.fun_list a:after {
+	content:""; 
+	display:block; 
+	position:absolute; 
+	right:4.5%; 
+	top:50%; 
+	width:8px; 
+	height:8px; 
+	border-top:2px solid #b4b4b4; 
+	border-right:2px solid #b4b4b4; 
+	transform:rotate(45deg) translateY(-50%); 
+	-webkit-transform:rotate(45deg) translateY(-50%)
+}
+.fun_list a span {display:inline-block; position:relative}
+.fun_list a span i {display:block; width:6px; height:6px; position:absolute; border-radius:6px; -webkit-border-radius:6px; background:#EF070B; right:-8px; top:13px}
+.list_1 a {
+	background: url(../images/user_center/shopping_history.gif) no-repeat left center;
+}
+.list_2 a:nth-child(1) {
+	background: url(../images/user_center/my_walet.gif) no-repeat left center;
+	background-size:20px auto;
+	border-bottom: 1px solid #EEE;
+}
+.list_2 a:nth-child(2) {
+	background: url(../images/user_center/youhuiquan.gif) no-repeat left center;
+	background-size:20px auto;
+}
+.list_2 a:nth-child(3) {
+	background: url(../images/user_center/kaquan.gif) no-repeat left center;
+	background-size:18px auto
+}
+.list_3 a {
+	background: url(../images/user_center/address.gif) no-repeat left center;
+}
+.list_4 a {
+	background: url(../images/user_center/invoice.gif) no-repeat left center;
+}
+
+.group a {
+	background: url(../images/user_center/group.png) no-repeat left center;
+}
+
+.fun_list > a {
+	background-size:20px auto	
+}
+a.stock {
+	border-bottom: 1px solid #EEE;
+	background: url(../images/user_center/stock.gif) no-repeat left center;
+	background-size:20px auto;
+}

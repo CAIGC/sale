@@ -5,6 +5,7 @@ import com.qywenji.sale.commons.controller.BaseController;
 import com.qywenji.sale.commons.utils.RedisUtil;
 import com.qywenji.sale.module.userInfo.bean.UserInfo;
 import com.qywenji.sale.module.userInfo.constant.UserInfoConstant;
+import com.qywenji.sale.module.userInfo.mq.UserInfoQueueMessageProducer;
 import com.qywenji.sale.module.userInfo.service.UserInfoService;
 import com.qywenji.sale.module.wechat.service.WechatService;
 import org.apache.commons.lang3.StringUtils;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by CAI_GC on 2016/12/2.
@@ -37,7 +40,7 @@ public class MenuDispatchController extends BaseController {
 
     @RequestMapping(value = "/wechat/menu/redirect")
     public void redirect(@RequestParam("tourl") String tourl, HttpServletResponse response, HttpServletRequest request) throws IOException {
-        String redirectUrl = request.getHeader("Referer") + "/wechat/menu/dispatch?tourl=" + tourl;
+        String redirectUrl = request.getRequestURL().toString().replace(request.getRequestURI(),"") + "/wechat/menu/dispatch?tourl=" + tourl;
         response.sendRedirect(wechatService.getBaseCodeUrl(redirectUrl));
         return;
     }
@@ -56,6 +59,12 @@ public class MenuDispatchController extends BaseController {
                 return null;
             }else{
                 userInfo = user;
+                if(userInfo != null){
+                    Map<String,Object> mqData = new HashMap<>();
+                    mqData.put("type","subscribe");
+                    mqData.put("data",JSONObject.toJSONString(userInfo));
+                    UserInfoQueueMessageProducer.send(mqData);
+                }
                 /*Long lock = RedisUtil.increa(UserInfoConstant.LOCK + openId);
                 RedisUtil.set(UserInfoConstant.LOCK + openId, lock + "", UserInfoConstant.LOCK_TIME);
                 if(lock == 1){
