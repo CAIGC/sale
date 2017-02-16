@@ -35,7 +35,7 @@ public class OrderController extends BaseController {
     }
     @RequestMapping(value = "/viewOrderDetail")
     public String viewOrderDetail(Integer itemId,Integer amount,Model model){
-        ProductDto productDto = productService.getItemByItemId(itemId);
+        ProductDto productDto = productService.getProductDtoByItemId(itemId);
         model.addAttribute("product",productDto);
         return "";
     }
@@ -44,10 +44,17 @@ public class OrderController extends BaseController {
     @RequestMapping(value = "/pay",method = RequestMethod.POST)
     public Object pay(HttpServletRequest request,Integer itemId,Integer amount,Integer couponId,String phone,Integer deliveryType){
         UserInfo userInfo = userInfoService.getUserInfoFromReids(request);
-        ProductDto productDto = productService.getItemByItemId(itemId);
+        ProductDto productDto = productService.getProductDtoByItemId(itemId);
 
 
 
         return super.success();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getProductDtoByItemId")
+    public Object getProductDtoByItemId(Integer itemId){
+        ProductDto productDto = productService.getProductDtoByItemId(itemId);
+        return super.success(productDto);
     }
 }

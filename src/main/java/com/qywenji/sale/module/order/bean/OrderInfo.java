@@ -15,7 +15,7 @@ public class OrderInfo {
     /*下单人openId*/
     private String openId;
     /*下单人昵称*/
-    private String nickName;
+    private String nickname;
     /*下单人电话*/
     private String phone;
     /*支付时间*/
